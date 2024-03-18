@@ -1,0 +1,8 @@
+{
+  "name": "xolani-wyzetalk-assessment",
+  "version": "1.0.0",
+  "description": "This is an assessment for Wyzetalk developer role",
+  "main": "index.js",
+  "author": "Xolani Maphumulo",
+  "license": "MIT"
+}
