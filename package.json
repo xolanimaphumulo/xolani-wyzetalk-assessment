@@ -4,5 +4,9 @@
   "description": "This is an assessment for Wyzetalk developer role",
   "main": "index.js",
   "author": "Xolani Maphumulo",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.11.29",
+    "typescript": "^5.4.2"
+  }
 }
