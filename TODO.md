@@ -14,6 +14,6 @@
 
 ## General Tasks
 
-- [ ] Init project with typescript
+- [x] Init project with typescript
 - [ ] Add basic folder structure
 - [ ] Add DB diagram
