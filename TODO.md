@@ -1,6 +1,6 @@
 ## Tasks
 
-- [ ] Implement required endpoints
+- [x] Implement required endpoints
 - [ ] Add tests for each endpoint
 
 ## DevOps Tasks
