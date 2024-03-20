@@ -1,0 +1,9 @@
+.git
+node_modules
+.eslint
+.prettier
+.git*
+.vscode
+readme.md
+Dockerfile*
+docker*.yml
