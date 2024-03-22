@@ -52,7 +52,7 @@ There are configurations
 To start the API, run the following command:
 
 ```bash
-yarn dev
+docker-compose up
 ```
 
 The API will start on the specified port (default is `3000`).
@@ -69,15 +69,3 @@ You can now access the API using tools like [Postman](https://www.postman.com/) 
 - `GET /api/leaderboard`: Gets a leadboard across all games
 
 For detailed information about each endpoint and their usage, refer to the API documentation.
-
-## Contributing
-
-Contributions are welcome! If you'd like to contribute to the project, please fork the repository, make your changes, and submit a pull request. Ensure to follow the [contributing guidelines](CONTRIBUTING.md).
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-Feel free to customize this README template further based on your specific project requirements, including adding more detailed usage instructions, API documentation, or any additional sections you find necessary.

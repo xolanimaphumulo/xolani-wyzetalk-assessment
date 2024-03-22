@@ -20,4 +20,4 @@ RUN yarn build
 EXPOSE 3000
 
 # Run the Node.js server
-CMD ["yarn", "dev"]
+CMD ["yarn", "start"]
