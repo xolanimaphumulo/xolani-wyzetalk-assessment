@@ -1,3 +1,4 @@
+import { MOVE_ERRORS } from "../constants";
 import { GameModel } from "../models/gameModel";
 import { PlayerGameMoveModel } from "../models/playerGameMoveModel";
 import { IPlayerGameMove } from "../types/playerGameMove";
@@ -6,25 +7,31 @@ export const createPlayerGameMove = async (data: IPlayerGameMove) => {
   const { gameId, playerId, chosenCards } = data;
 
   if (!gameId || !playerId || !chosenCards || chosenCards.length !== 2) {
-    throw new Error("Invalid move");
+    throw new Error("INVALID_MOVE");
   }
   const game = await GameModel.findById(gameId);
 
   if (!game) {
-    throw new Error("Game not found");
+    throw new Error("GAME_NOT_FOUND");
   }
 
   if (game.status !== "active") {
-    throw new Error("Game is not active");
+    throw new Error("GAME_NOT_ACTIVE");
   }
 
   if (
     game.matchedCards.includes(chosenCards[0]) ||
     game.matchedCards.includes(chosenCards[1])
   ) {
-    throw new Error("Cards already matched");
+    throw new Error("CARDS_ALREADY_MATCHED");
   }
 
+  if (
+    !game.cards.includes(chosenCards[0]) ||
+    !game.cards.includes(chosenCards[1])
+  ) {
+    throw new Error("INVALID_MOVE");
+  }
   const winningMove = chosenCards[0] === chosenCards[1];
 
   if (winningMove) {
@@ -45,6 +52,7 @@ export const createPlayerGameMove = async (data: IPlayerGameMove) => {
     gameId,
     playerId,
     chosenCards,
+    createdAt: new Date(),
     result: winningMove ? "match" : "no match",
   });
 

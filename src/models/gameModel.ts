@@ -2,12 +2,6 @@ import mongoose, { Model, Schema } from "mongoose";
 import { IGame } from "../types/game";
 
 const gameSchema: Schema = new Schema({
-  _id: {
-    type: Schema.Types.ObjectId,
-    index: true,
-    required: true,
-    auto: true,
-  },
   cards: [String],
   matchedCards: [String],
   status: {

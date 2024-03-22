@@ -2,26 +2,24 @@ import mongoose, { Model, Schema } from "mongoose";
 import { IPlayerGameMove } from "../types/playerGameMove";
 
 const playerGameMoveSchema: Schema = new Schema({
-  _id: {
-    type: Schema.Types.ObjectId,
-    index: true,
-    required: true,
-    auto: true,
-  },
-  cards: [String],
-  matchedCards: [String],
-  status: {
+  gameId: {
     type: String,
-    enum: ["active", "completed"],
-    default: "active",
+    required: true,
   },
-  startTime: {
-    type: Date,
-    required: false,
+  playerId: {
+    type: String,
+    required: true,
   },
-  endTime: {
+
+  chosenCards: [String],
+  result: {
+    type: String,
+    enum: ["match", "no match"],
+    default: "no match",
+  },
+  createdAt: {
     type: Date,
-    required: false,
+    required: true,
   },
 });
 

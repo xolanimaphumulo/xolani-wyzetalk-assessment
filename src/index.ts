@@ -5,6 +5,7 @@ import { connectToDB } from "./utils/mongo";
 import Routers from "./api/index";
 
 const app = express();
+app.use(bodyParser.json());
 connectToDB()
   .then((res) => {})
   .catch((e) => {
@@ -14,9 +15,6 @@ connectToDB()
 Routers(app);
 
 const port = process.env.PORT || 3000;
-
-// Middleware
-app.use(bodyParser.json());
 
 // Start server
 app.listen(port, () => {

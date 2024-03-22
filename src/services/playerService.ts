@@ -15,6 +15,7 @@ export const createPlayer = async (data: IPlayer) => {
     updatedAt: new Date(),
   });
   const newPlayerResponse: IPlayer = await player.save();
+
   if (!newPlayerResponse) {
     return null;
   }

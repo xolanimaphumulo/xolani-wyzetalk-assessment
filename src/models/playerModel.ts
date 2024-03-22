@@ -2,12 +2,6 @@ import mongoose, { Model, Schema } from "mongoose";
 import { IPlayer } from "../types/player";
 
 const playerSchema: Schema = new Schema({
-  _id: {
-    type: Schema.Types.ObjectId,
-    index: true,
-    required: true,
-    auto: true,
-  },
   fullName: {
     type: String,
     required: true,

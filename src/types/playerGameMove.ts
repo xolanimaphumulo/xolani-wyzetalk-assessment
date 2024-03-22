@@ -3,5 +3,6 @@ export interface IPlayerGameMove extends Document {
   gameId: string;
   playerId: string;
   chosenCards: string[];
+  createdAt: Date;
   result: "match" | "no match";
 }

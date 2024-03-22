@@ -1,9 +1,12 @@
-import { PLAYER_GAME_MOVE_RESULTS_MESSAGES } from "../constants/playerGameMove";
+import {
+  MOVE_ERRORS,
+  PLAYER_GAME_MOVE_RESULTS_MESSAGES,
+} from "../constants/playerGameMove";
 import { IPlayerGameMove } from "../types/playerGameMove";
 const { STATUS_CODES } = require("../constants");
 import { Request, Response } from "express";
 import { constructResponse } from "../utils/response";
-const playerGameMoveService = require("../services/playerGameMoveService");
+import * as playerGameMoveService from "../services/playerGameMoveService";
 
 export const createPlayerGameMove = async (req: Request, res: Response) => {
   try {
@@ -17,9 +20,17 @@ export const createPlayerGameMove = async (req: Request, res: Response) => {
       playerGameMove
     );
   } catch (error) {
+    if (error && error.message && MOVE_ERRORS[error.message]) {
+      return constructResponse(
+        res,
+        MOVE_ERRORS[error.message],
+        STATUS_CODES.OK,
+        null
+      );
+    }
     return constructResponse(
       res,
-      PLAYER_GAME_MOVE_RESULTS_MESSAGES.PLAYER_MOVE_ERROR,
+      error,
       STATUS_CODES.INTERNAL_SERVER_ERROR,
       null,
       error

@@ -5,15 +5,14 @@
 
 ## DevOps Tasks
 
-- [ ] Dockerize the application
+- [x] Dockerize the application
 
 ## Documentation Tasks
 
-- [ ] Write API documentation
-- [ ] Document project architecture
+- [x] Write API documentation
+- [x] Document project architecture
 
 ## General Tasks
 
 - [x] Init project with typescript
 - [x] Add basic folder structure
-- [x] Add DB diagram
