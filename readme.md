@@ -30,7 +30,7 @@ Before running the API, ensure you have the following installed:
 2. Navigate to the project directory:
 
    ```bash
-   cd your-repository
+   cd xolani-wyzetalk-assessment
    ```
 
 3. Install dependencies:
