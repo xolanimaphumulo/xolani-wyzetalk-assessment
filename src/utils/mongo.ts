@@ -1,5 +1,4 @@
-const mongoose = require("mongoose");
-
+import mongoose from "mongoose";
 // Function to connect to MongoDB
 export const connectToDB = async () => {
   const DB_GAME_NAME = "xolani_game";
@@ -9,6 +8,7 @@ export const connectToDB = async () => {
   try {
     await mongoose.connect(uri, {
       family: 4,
+      serverSelectionTimeoutMS: 60000,
     });
     console.log("Connected to Mongo");
   } catch (error) {
